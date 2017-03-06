@@ -11,10 +11,10 @@
         $(function() {
             $('#generate').click(function() {
                 var userBackground = $('#backgroundColor').val();
-                $('#banner').val(userBackground).css('background-color', userBackground); //set banner's background color to user's input color
-                $('#banner').html($('#text').val()); //Takes user's text and replace with h1(text on banner)
+                $('#banner').val(userBackground).css('background-color', userBackground); //background color to user's input color
+                $('#banner').html($('#text').val()); //replace text with h1 thats on the banner already
                 var userTextColor = $('#textColor').val();
-                $('#banner').val(userTextColor).css('color', userTextColor); //set banner's text color to user's input color
+                $('#banner').val(userTextColor).css('color', userTextColor); //changes text color to user's input color
             });
             $('#randomize').click(function() {
                 if ($('#random').is(':checked')) { //checks if radio button is clicked
@@ -22,7 +22,7 @@
                     var randomTextColor = colors[Math.floor(Math.random() * colors.length)];
                     $('#banner').val(randomTextColor).css({
                         'color': randomTextColor
-                    }); //sets banner's text color to color randomly selected from array
+                    }); //text color to color randomly selected from array
                     $('#banner').html($('#text').val()); //Takes user's text and replace with h1(text on banner)
                 }
             });
@@ -42,6 +42,7 @@
             border-style:double;
             border-width:10px;
             border-radius:5px;
+            font-family: Cinzel;
         }
         
         h1 {
@@ -65,8 +66,12 @@
 <body>
     <h1>Banner Generator</h1>
 
-   
-        
+   <hr>
+        <input type="radio" id="random" /> Random Text and Border Color 
+        <br><br>
+        <button id='randomize'>Random</button>
+        <br></br>
+        <hr>
         First and Last Name:
         <input id="text" />
         <br><br> Background color:
@@ -76,14 +81,10 @@
         <br><br>
         <button id='generate'>Generate</button>
         <br><br>
-        <hr>
-<hr>
-        <input type="radio" id="random" /> Random Text Color
-        <br><br>
-        <button id='randomize'>Randomize</button>
+        
         
         
     </div>
 
-    <h1 id="banner">Text</h1>
+    <h1 id="banner">This certificate goes to .....</h1>
 </body>
